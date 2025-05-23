@@ -28,6 +28,7 @@ public class Employee implements UserDetails {
     @JsonIgnore
     private String password;
 
+    // Many employees belong to one FuelStation; foreign key column 'fuel_station_id' cannot be null
     @ManyToOne
     @JoinColumn(name = "fuel_station_id", nullable = false)
     private FuelStation fuelStation;
