@@ -10,6 +10,7 @@ public class ErrorResponse {
     private String message;
     private long timestamp;
 
+//    Automatically sets the timestamp to the current system time.
     public ErrorResponse(int status, String message) {
         this.status = status;
         this.message = message;
