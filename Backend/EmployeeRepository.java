@@ -16,6 +16,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     List<Employee> findByFuelStation(FuelStation id);
 
+//    Find an employee by matching both phone number and password.
     Optional<Employee> findOneByPhoneAndPassword(String phone, String password);
 
     void deleteByFuelStationId(Long id);

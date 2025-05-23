@@ -29,6 +29,7 @@ public class JwtService {
         return extractClaim(token, Claims::getSubject);
     }
 
+//    Extracts the role claim from the JWT token.
     public String extractRole(String token) {
         return extractClaim(token, claims -> claims.get("role", String.class));
     }

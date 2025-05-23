@@ -4,6 +4,8 @@ import java.util.Optional;
 
 public class SuccessResponse {
     private String message;
+
+//    HTTP status code (200 for success, 500 for failure)
     private int status;
     private Object data;
 

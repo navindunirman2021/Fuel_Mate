@@ -25,6 +25,10 @@ public class EmployeeService {
     @Autowired
     private FuelStationRepo fuelStationRepo;
 
+//    Adds a new employee to the system.
+//    Checks for duplicate NIC and phone number.
+//    Hashes the password before saving.
+//    Associates the employee with the fuel station of the currently logged-in admin.
     public String addEmployee(EmployeeDTO employeeDTO) {
         // Check if NIC already exists
             Optional<Employee> existingEmployeeByNIC = employeeRepo.findByNic(employeeDTO.getNic());
