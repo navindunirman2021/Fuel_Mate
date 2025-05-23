@@ -42,6 +42,7 @@ public class EmployeeController {
         this.jwtService = jwtService;
     }
 
+    // Endpoint to add a new employee to the system.
     @PostMapping(path="/save")
     @PreAuthorize("hasAnyRole('STATION_MANAGER')")
     @SecurityRequirement(name = "bearerAuth")
@@ -80,6 +81,7 @@ public class EmployeeController {
         }
     }
 
+    // Endpoint to retrieve a list of employees.
     @GetMapping("/all")
     @PreAuthorize("hasAnyRole('SUPER_ADMIN','STATION_MANAGER')")
     @SecurityRequirement(name = "bearerAuth")
@@ -100,6 +102,7 @@ public class EmployeeController {
         }
     }
 
+    // Endpoint to get a specific employee's details using their phone number.
     @GetMapping("/{phone}")
     @PreAuthorize("hasAnyRole('STATION_MANAGER','SUPER_ADMIN')")
     @SecurityRequirement(name = "bearerAuth")
@@ -121,6 +124,7 @@ public class EmployeeController {
         }
     }
 
+    // Endpoint for employee login using credentials provided in LoginDTO
     @PostMapping("/login")
     public ResponseEntity<?> loginEmployee(@RequestBody LoginDTO loginDTO) {
         Optional<Employee> employee = employeeService.loginEmployee(loginDTO);
@@ -136,6 +140,7 @@ public class EmployeeController {
         }
     }
 
+    // Endpoint to get details of the currently authenticated employee using the JWT token.
     @GetMapping("/me")
     @PreAuthorize("hasAnyRole('EMPLOYEE')")
     @SecurityRequirement(name = "bearerAuth")
@@ -161,6 +166,7 @@ public class EmployeeController {
         }
     }
 
+    // Endpoint to delete an employee using their unique ID.
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAnyRole('STATION_MANAGER','SUPER_ADMIN')")
     @SecurityRequirement(name = "bearerAuth")
