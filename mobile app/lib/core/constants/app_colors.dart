@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   // Primary colors
-  static const Color primary = Color(0xFF2DFCD8); // Turquoise from screenshot
+  static const Color primary = Color(0xFF2DFCD8); 
   static const Color primaryDark = Color(0xFF24D6B7);
   static const Color primaryLight = Color(0xFF4DFDE2);
 
