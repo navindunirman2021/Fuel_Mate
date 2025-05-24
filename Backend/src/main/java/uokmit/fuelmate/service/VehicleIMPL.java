@@ -40,7 +40,7 @@ public class VehicleIMPL implements VehicleService {
 
 
     private String generateUniqueQRId(String chassisNumber, String registrationNumber) {
-        // Combine chassis number and registration number with timestamp for uniqueness
+       
         String timestamp = String.valueOf(System.currentTimeMillis());
         String combined = chassisNumber + registrationNumber + timestamp;
 
