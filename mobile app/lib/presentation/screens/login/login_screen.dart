@@ -7,14 +7,14 @@ import '../../../core/constants/app_text_styles.dart';
 
 class LoginScreen extends StatelessWidget {
   final LoginController controller = LoginController();
-
+  // Create an instance of LoginController to manage login state and logic
   LoginScreen({super.key});
   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.darkBackground, // Using new color constant
+      backgroundColor: AppColors.darkBackground, // Set background color from app constants
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
@@ -29,6 +29,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 24),
 
               const SizedBox(height: 48),
+               // Pass the controller instance to handle login logic and state
               LoginForm(controller: controller),
             ],
           ),
