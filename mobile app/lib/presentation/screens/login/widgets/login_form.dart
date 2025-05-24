@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import '../../shared/primary_button.dart';
 import '../../../../core/constants/app_colors.dart';
 
+// LoginForm widget that displays a login form with phone number and password inputs
 class LoginForm extends StatefulWidget {
+   // Injecting the LoginController instance for managing login logic
   final LoginController controller;
 
   const LoginForm({
@@ -19,10 +21,12 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  // validate the form inputs
   final _formKey = GlobalKey<FormState>();
   bool _obscurePassword = true;
   
   Future<void> _handleLogin() async {
+    // Validate the form fields (phone number and password)
     if (_formKey.currentState?.validate() ?? false) {
       try {
         final result = await widget.controller.login();
@@ -45,6 +49,7 @@ class _LoginFormState extends State<LoginForm> {
           );
         }
       } catch (e) {
+        // Catch unexpected errors during login
         print("Error during login: $e");
         if (mounted) {
           AppDialog.showError(
@@ -63,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextFormField(
-            controller: widget.controller.phoneNumberController,
+            controller: widget.controller.phoneNumberController,// Controlled by GetX controller
             decoration: InputDecoration(
               labelText: 'Phone Number',
               hintText: 'Enter your phone number',
@@ -186,7 +191,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   void dispose() {
-    // Don't dispose the controller here, it's managed by GetX
+    // Do not dispose controllers here because they are managed by GetX lifecycle
     super.dispose();
   }
 }
