@@ -25,13 +25,7 @@ ApplicationRunner initAdmin(UserRepo userRepo, AdminRepository adminRepository, 
             adminService.addAdmin(admin);
 
 
-            AdminDTO stationAdmin = new AdminDTO();
-            stationAdmin.setName("Kasun Perera");
-            stationAdmin.setEmail("kasun@station.com");
-            stationAdmin.setRole(AdminType.STATION_MANAGER);
-            stationAdmin.setPassword("admin");
-            stationAdmin.setNic("123456788V");
-            adminService.addAdmin(stationAdmin);
+
 
             AdminDTO stationAdmin2 = new AdminDTO();
             stationAdmin2.setName("Sandun Dinesh");
